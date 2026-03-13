@@ -15,15 +15,18 @@
 	let con = $state(false);
 	let autoEmail = $state(false);
 
-	// Email link state
-	let emailLinks = $state({
-		dhlomo: '',
-		clarke: '',
-		sec: '',
-		cull: '',
-		shareX: '',
-		shareWA: ''
+	// Share links
+	let shareLinks = $state({ x: '', wa: '' });
+
+	// Email sending state per recipient
+	let emailStatus = $state<Record<string, 'idle' | 'sending' | 'sent' | 'error'>>({
+		dhlomo: 'idle',
+		clarke: 'idle',
+		sec: 'idle',
+		cull: 'idle'
 	});
+
+	let currentSig: Signature | null = $state(null);
 
 	function handleSign(e: Event) {
 		e.preventDefault();
@@ -40,42 +43,74 @@
 			ts: Date.now()
 		};
 
-		setTimeout(() => {
+		setTimeout(async () => {
 			addSignature(sig);
 			signerName = sig.fn;
-			buildEmailLinks(sig);
+			currentSig = sig;
+			shareLinks = {
+				x: `https://twitter.com/intent/tweet?text=${encodeURIComponent('I signed the petition to decriminalise psilocybin in South Africa. The science is clear. Add your name: ')}&url=${encodeURIComponent(location.href)}`,
+				wa: `https://wa.me/?text=${encodeURIComponent('I signed the petition to decriminalise psilocybin in South Africa. The science is clear. Add your name: ' + location.href)}`
+			};
 			signed = true;
 			signing = false;
 
+			// Auto-send to all committee members if checked
 			if (sig.auto) {
-				const subj = encodeURIComponent('Constituent Call for Psilocybin Reform');
-				const body = buildBody(sig, 'Members of the Portfolio Committee on Health');
-				setTimeout(() => {
-					window.open(
-						`mailto:sdhlomo@parliament.gov.za,mclarke@parliament.gov.za,vmajalamba@parliament.gov.za?subject=${subj}&body=${body}`,
-						'_blank'
-					);
-				}, 600);
+				await sendEmails(['dhlomo', 'clarke', 'sec']);
 			}
 		}, 500);
 	}
 
-	function buildBody(s: Signature, recipient: string) {
-		return encodeURIComponent(
-			`Dear ${recipient},\n\nI am writing as a South African citizen from ${s.city}, ${s.prov} to add my voice to the call for psilocybin reform.\n\nI have signed the Free The Fungi petition calling on the Portfolio Committee on Health and SAHPRA to review the Schedule 7 classification of psilocybin, which is not supported by scientific evidence.\n\nThe pending constitutional challenge (Cromhout and Ferguson v Minister of Justice, Case No: 2024-040119) and the 2018 cannabis precedent both show this prohibition is constitutionally vulnerable. I urge the Committee to engage proactively.\n\n${s.msg ? 'Personal note: ' + s.msg + '\n\n' : ''}Yours faithfully,\n${s.fn} ${s.ln}\n${s.city}, ${s.prov}`
-		);
+	async function sendEmails(recipients: string[]) {
+		if (!currentSig) return;
+
+		for (const key of recipients) {
+			emailStatus[key] = 'sending';
+		}
+
+		try {
+			const res = await fetch('/api/send-email', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					fn: currentSig.fn,
+					ln: currentSig.ln,
+					city: currentSig.city,
+					prov: currentSig.prov,
+					msg: currentSig.msg,
+					recipients
+				})
+			});
+
+			const data = await res.json();
+
+			if (data.results) {
+				for (const r of data.results) {
+					emailStatus[r.key] = r.success ? 'sent' : 'error';
+				}
+			} else {
+				for (const key of recipients) {
+					emailStatus[key] = 'error';
+				}
+			}
+		} catch {
+			for (const key of recipients) {
+				emailStatus[key] = 'error';
+			}
+		}
 	}
 
-	function buildEmailLinks(s: Signature) {
-		const subj = encodeURIComponent('Constituent Call for Psilocybin Reform');
-		emailLinks = {
-			dhlomo: `mailto:sdhlomo@parliament.gov.za?subject=${subj}&body=${buildBody(s, 'Dr Dhlomo')}`,
-			clarke: `mailto:mclarke@parliament.gov.za?subject=${subj}&body=${buildBody(s, 'Mrs Clarke')}`,
-			sec: `mailto:vmajalamba@parliament.gov.za?subject=${subj}&body=${buildBody(s, 'Ms Majalamba')}`,
-			cull: `mailto:info@cullinans.co.za?subject=${encodeURIComponent('Supporting the Cromhout Psilocybin Case')}&body=${encodeURIComponent(`Dear Cullinan & Associates,\n\nI signed the Free The Fungi petition and would like to support the Cromhout case. Is there a legal defence fund or other way to contribute?\n\nKind regards,\n${s.fn} ${s.ln}\n${s.city}, ${s.prov}`)}`,
-			shareX: `https://twitter.com/intent/tweet?text=${encodeURIComponent('I signed the petition to decriminalise psilocybin in South Africa. The science is clear. Add your name: ')}&url=${encodeURIComponent(typeof window !== 'undefined' ? location.href : '')}`,
-			shareWA: `https://wa.me/?text=${encodeURIComponent('I signed the petition to decriminalise psilocybin in South Africa. The science is clear. Add your name: ' + (typeof window !== 'undefined' ? location.href : ''))}`
-		};
+	async function sendSingleEmail(key: string) {
+		await sendEmails([key]);
+	}
+
+	function emailBtnText(key: string): string {
+		switch (emailStatus[key]) {
+			case 'sending': return 'Sending...';
+			case 'sent': return 'Sent ✓';
+			case 'error': return 'Retry →';
+			default: return key === 'cull' ? 'Reach Out →' : 'Send Email →';
+		}
 	}
 
 	let copyText = $state('Copy Link');
@@ -176,33 +211,33 @@
 						<div class="fu-name">Dr Sibongiseni Dhlomo, MP</div>
 						<div class="fu-role">Chair, Portfolio Committee on Health</div>
 					</div>
-					<a class="fu-btn" href={emailLinks.dhlomo} target="_blank">Send Email →</a>
+					<button class="fu-btn" class:sent={emailStatus.dhlomo === 'sent'} disabled={emailStatus.dhlomo === 'sending'} onclick={() => sendSingleEmail('dhlomo')}>{emailBtnText('dhlomo')}</button>
 				</div>
 				<div class="fu-card">
 					<div class="fu-info">
 						<div class="fu-name">Mrs Michéle Clarke, MP</div>
 						<div class="fu-role">DA Member, Portfolio Committee on Health</div>
 					</div>
-					<a class="fu-btn" href={emailLinks.clarke} target="_blank">Send Email →</a>
+					<button class="fu-btn" class:sent={emailStatus.clarke === 'sent'} disabled={emailStatus.clarke === 'sending'} onclick={() => sendSingleEmail('clarke')}>{emailBtnText('clarke')}</button>
 				</div>
 				<div class="fu-card">
 					<div class="fu-info">
 						<div class="fu-name">Vuyokazi Majalamba</div>
 						<div class="fu-role">Secretary, Portfolio Committee on Health</div>
 					</div>
-					<a class="fu-btn" href={emailLinks.sec} target="_blank">Send Email →</a>
+					<button class="fu-btn" class:sent={emailStatus.sec === 'sent'} disabled={emailStatus.sec === 'sending'} onclick={() => sendSingleEmail('sec')}>{emailBtnText('sec')}</button>
 				</div>
 				<div class="fu-card">
 					<div class="fu-info">
 						<div class="fu-name">Cullinan & Associates</div>
 						<div class="fu-role">Legal team — ask how to support</div>
 					</div>
-					<a class="fu-btn" href={emailLinks.cull} target="_blank">Reach Out →</a>
+					<button class="fu-btn" class:sent={emailStatus.cull === 'sent'} disabled={emailStatus.cull === 'sending'} onclick={() => sendSingleEmail('cull')}>{emailBtnText('cull')}</button>
 				</div>
 			</div>
 			<div class="share-row">
-				<a class="share-btn" href={emailLinks.shareX} target="_blank">Share on X</a>
-				<a class="share-btn" href={emailLinks.shareWA} target="_blank">Share on WhatsApp</a>
+				<a class="share-btn" href={shareLinks.x} target="_blank">Share on X</a>
+				<a class="share-btn" href={shareLinks.wa} target="_blank">Share on WhatsApp</a>
 				<button class="share-btn" onclick={copyLink}>{copyText}</button>
 			</div>
 		</div>
@@ -415,9 +450,20 @@
 		transition: all 0.15s;
 		white-space: nowrap;
 		flex-shrink: 0;
+		border: none;
+		cursor: pointer;
+		font-family: var(--sans);
 	}
 	.fu-btn:hover {
 		background: var(--accent-light);
+	}
+	.fu-btn:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+	.fu-btn.sent {
+		background: rgba(45, 107, 74, 0.12);
+		color: var(--accent);
 	}
 	.share-row {
 		display: flex;

@@ -1,0 +1,13 @@
+{
+  "name": "Free The Fungi",
+  "short_name": "FreeTheFungi",
+  "description": "Petition to decriminalise psilocybin in South Africa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAF8",
+  "theme_color": "#2D6B4A",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

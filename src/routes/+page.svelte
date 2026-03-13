@@ -8,7 +8,51 @@
 
 <svelte:head>
 	<title>Free The Fungi — Petition to Decriminalise Psilocybin in South Africa</title>
+	<meta name="description" content="Sign the petition supporting the constitutional challenge to decriminalise psilocybin in South Africa. Psilocybin is classified alongside heroin under Schedule 7 — despite evidence it is non-addictive, non-toxic, and therapeutically valuable." />
+	<meta name="keywords" content="psilocybin, decriminalise, South Africa, petition, mushrooms, Schedule 7, constitutional challenge, Cromhout, mental health, cognitive liberty" />
+	<meta name="author" content="Free The Fungi" />
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Free The Fungi — Decriminalise Psilocybin in South Africa" />
+	<meta property="og:description" content="South Africa decriminalised cannabis. Psilocybin is next. Sign the petition supporting the constitutional challenge." />
+	<meta property="og:url" content="https://free-the-fungi.pages.dev" />
+	<meta property="og:site_name" content="Free The Fungi" />
+	<meta property="og:locale" content="en_ZA" />
+	<meta property="og:image" content="https://free-the-fungi.pages.dev/icon-512.png" />
+	<meta property="og:image:width" content="512" />
+	<meta property="og:image:height" content="512" />
+
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:title" content="Free The Fungi — Decriminalise Psilocybin in South Africa" />
+	<meta name="twitter:description" content="South Africa decriminalised cannabis. Psilocybin is next. Sign the petition." />
+	<meta name="twitter:image" content="https://free-the-fungi.pages.dev/icon-512.png" />
+
+	<!-- Canonical -->
+	<link rel="canonical" href="https://free-the-fungi.pages.dev" />
+
+	<!-- Structured data -->
+	{@html `<script type="application/ld+json">${JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "WebPage",
+		"name": "Free The Fungi",
+		"description": "Petition to decriminalise psilocybin in South Africa",
+		"url": "https://free-the-fungi.pages.dev",
+		"about": {
+			"@type": "Thing",
+			"name": "Psilocybin decriminalisation in South Africa"
+		},
+		"potentialAction": {
+			"@type": "Action",
+			"name": "Sign the Petition",
+			"target": "https://free-the-fungi.pages.dev#petition"
+		}
+	})}</script>`}
+
+	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400;1,8..60,500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap"
 		rel="stylesheet"

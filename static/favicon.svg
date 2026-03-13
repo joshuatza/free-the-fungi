@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="cap" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D6B4A"/>
+      <stop offset="100%" stop-color="#7B6BAA"/>
+    </linearGradient>
+  </defs>
+  <!-- Mushroom cap -->
+  <ellipse cx="32" cy="28" rx="22" ry="16" fill="url(#cap)"/>
+  <!-- Stem -->
+  <rect x="27" y="28" width="10" height="20" rx="5" fill="#3A8A5E" opacity="0.85"/>
+  <!-- Small cap left -->
+  <ellipse cx="16" cy="36" rx="10" ry="7" fill="#7B6BAA" opacity="0.5"/>
+  <rect x="13" y="36" width="6" height="12" rx="3" fill="#7B6BAA" opacity="0.35"/>
+  <!-- Small cap right -->
+  <ellipse cx="48" cy="34" rx="9" ry="6.5" fill="#2D6B4A" opacity="0.45"/>
+  <rect x="45.5" y="34" width="5" height="11" rx="2.5" fill="#2D6B4A" opacity="0.3"/>
+</svg>

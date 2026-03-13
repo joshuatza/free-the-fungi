@@ -72,7 +72,7 @@ ${city}, ${prov}`;
 
 		try {
 			const { error } = await resend.emails.send({
-				from: 'Free The Fungi <petition@free-the-fungi.pages.dev>',
+				from: 'Free The Fungi <petition@jtstack.org>',
 				to: [recipient.email],
 				subject,
 				text: emailBody,

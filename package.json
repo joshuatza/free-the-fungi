@@ -22,8 +22,10 @@
 	},
 	"dependencies": {
 		"@dimforge/rapier3d-compat": "^0.19.3",
+		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@types/three": "^0.183.1",
-		"three": "^0.183.2"
+		"three": "^0.183.2",
+		"wrangler": "^4.73.0"
 	}
 }

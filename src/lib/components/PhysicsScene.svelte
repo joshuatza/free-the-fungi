@@ -240,6 +240,36 @@
 		};
 		window.addEventListener('resize', handleResize);
 
+		// Scroll tracking — velocity + per-mushroom delayed reaction
+		let scrollY = window.scrollY;
+		let scrollVelocity = 0;
+		let scrollImpulses: number[] = new Array(NUM).fill(0);
+
+		const handleScroll = () => {
+			const newScrollY = window.scrollY;
+			const delta = newScrollY - scrollY;
+			scrollVelocity = delta;
+			scrollY = newScrollY;
+
+			// Cascade: each mushroom gets the impulse with a delay based on its
+			// vertical rest position. Top mushrooms react first on downscroll,
+			// bottom mushrooms react first on upscroll.
+			const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+			const scrollProgress = pageHeight > 0 ? newScrollY / pageHeight : 0;
+
+			for (let i = 0; i < NUM; i++) {
+				// Normalize rest Y position to 0..1 (top to bottom)
+				const normalizedY = 1 - ((mushrooms[i].restPos.y + viewH / 2) / viewH);
+				// Delay: mushrooms closer to scroll direction react sooner
+				const proximity = delta > 0
+					? 1 - Math.abs(normalizedY - scrollProgress) // downscroll: near viewport top reacts more
+					: 1 - Math.abs(normalizedY - scrollProgress);
+				const strength = delta * 0.15 * Math.max(0, proximity + 0.3);
+				scrollImpulses[i] += strength;
+			}
+		};
+		window.addEventListener('scroll', handleScroll, { passive: true });
+
 		const clock = new THREE.Clock();
 		const tmpVec = new RAPIER.Vector3(0, 0, 0);
 
@@ -261,6 +291,27 @@
 				const phase = elapsed * 0.3 + i * 1.3;
 				tmpVec.x += Math.sin(phase) * 0.004;
 				tmpVec.y += Math.cos(phase * 0.6) * 0.005;
+
+				// Scroll impulse — sway sideways + nudge vertically
+				if (Math.abs(scrollImpulses[i]) > 0.01) {
+					const si = scrollImpulses[i];
+					// Lateral sway (alternate direction per mushroom)
+					const sway = (i % 2 === 0 ? 1 : -1) * si * 0.012;
+					tmpVec.x += sway;
+					// Vertical nudge in scroll direction
+					tmpVec.y -= si * 0.008;
+					// Rotational wiggle via torque
+					body.applyTorqueImpulse(
+						new RAPIER.Vector3(
+							si * 0.003 * (i % 3 === 0 ? -1 : 1),
+							0,
+							si * 0.005 * (i % 2 === 0 ? 1 : -1)
+						),
+						true
+					);
+					// Decay the stored impulse
+					scrollImpulses[i] *= 0.85;
+				}
 
 				// Mouse push
 				const mx = pos.x - mouseWorld.x;
@@ -321,6 +372,7 @@
 		animate();
 
 		return () => {
+			window.removeEventListener('scroll', handleScroll);
 			window.removeEventListener('mousemove', handleMouseMove);
 			window.removeEventListener('mouseleave', handleMouseLeave);
 			window.removeEventListener('resize', handleResize);

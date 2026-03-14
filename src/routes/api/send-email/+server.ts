@@ -25,6 +25,7 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 		prov: string;
 		msg: string;
 		recipients: string[];
+		pdfs?: Record<string, string>;
 	};
 
 	try {
@@ -33,7 +34,7 @@ export const POST: RequestHandler = async ({ request, platform }) => {
 		return json({ error: 'Invalid request body' }, { status: 400 });
 	}
 
-	const { fn, ln, city, prov, msg, recipients: recipientKeys } = body;
+	const { fn, ln, city, prov, msg, recipients: recipientKeys, pdfs } = body;
 
 	if (!fn || !ln || !city || !prov || !recipientKeys?.length) {
 		return json({ error: 'Missing required fields' }, { status: 400 });
@@ -71,11 +72,26 @@ ${fn} ${ln}
 ${city}, ${prov}`;
 
 		try {
+			let attachments: { filename: string; content: Buffer }[] | undefined;
+			if (pdfs?.[key]) {
+				// Decode base64 to Buffer for Resend SDK
+				const binaryStr = atob(pdfs[key]);
+				const bytes = new Uint8Array(binaryStr.length);
+				for (let i = 0; i < binaryStr.length; i++) {
+					bytes[i] = binaryStr.charCodeAt(i);
+				}
+				attachments = [{
+					filename: `petition-letter-${fn.toLowerCase()}-${ln.toLowerCase()}.pdf`,
+					content: bytes as unknown as Buffer,
+				}];
+			}
+
 			const { error } = await resend.emails.send({
 				from: 'Free The Fungi <petition@jtstack.org>',
 				to: [recipient.email],
 				subject,
 				text: emailBody,
+				attachments,
 			});
 
 			if (error) {

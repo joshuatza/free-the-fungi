@@ -25,6 +25,7 @@
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@types/three": "^0.183.1",
+		"jspdf": "^4.2.0",
 		"resend": "^6.9.3",
 		"three": "^0.183.2",
 		"wrangler": "^4.73.0"

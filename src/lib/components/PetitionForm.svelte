@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { addSignature, type Signature } from '$lib/stores/signatures';
+	import { generateSignedLetter } from '$lib/utils/generateLetter';
 	import SignatureList from './SignatureList.svelte';
 
 	let signed = $state(false);
@@ -61,11 +62,33 @@
 		}, 500);
 	}
 
+	const recipientNames: Record<string, string> = {
+		dhlomo: 'Dr Dhlomo',
+		clarke: 'Mrs Clarke',
+		sec: 'Ms Majalamba',
+		cull: 'Cullinan & Associates'
+	};
+
 	async function sendEmails(recipients: string[]) {
 		if (!currentSig) return;
 
 		for (const key of recipients) {
 			emailStatus[key] = 'sending';
+		}
+
+		// Generate a signed PDF for each recipient
+		const pdfs: Record<string, string> = {};
+		for (const key of recipients) {
+			pdfs[key] = generateSignedLetter({
+				recipientName: recipientNames[key] || key,
+				recipientTitle: '',
+				fn: currentSig.fn,
+				ln: currentSig.ln,
+				city: currentSig.city,
+				prov: currentSig.prov,
+				email: currentSig.email,
+				msg: currentSig.msg
+			});
 		}
 
 		try {
@@ -78,7 +101,8 @@
 					city: currentSig.city,
 					prov: currentSig.prov,
 					msg: currentSig.msg,
-					recipients
+					recipients,
+					pdfs
 				})
 			});
 

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none">
+  <!-- Mushroom icon -->
+  <g transform="translate(10, 8)">
+    <!-- Cap - clean dome -->
+    <path d="M32 38 C32 18, 8 18, 8 38" fill="#2D6B4A" opacity="0.9"/>
+    <path d="M32 38 C32 18, 56 18, 56 38" fill="#2D6B4A" opacity="0.75"/>
+    <!-- Subtle gill lines -->
+    <line x1="20" y1="36" x2="20" y2="28" stroke="#FAFAF8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="32" y1="36" x2="32" y2="22" stroke="#FAFAF8" stroke-width="0.6" opacity="0.3"/>
+    <line x1="44" y1="36" x2="44" y2="28" stroke="#FAFAF8" stroke-width="0.6" opacity="0.3"/>
+    <!-- Stem -->
+    <rect x="26" y="38" width="12" height="24" rx="4" fill="#2D6B4A" opacity="0.55"/>
+    <!-- Small secondary cap -->
+    <path d="M54 48 C54 38, 44 38, 44 48" fill="#7B6BAA" opacity="0.5"/>
+    <rect x="46" y="48" width="6" height="14" rx="2.5" fill="#7B6BAA" opacity="0.3"/>
+  </g>
+  <!-- Text -->
+  <text x="82" y="42" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="300" fill="#1A1A18" letter-spacing="-0.5">
+    Free The
+  </text>
+  <text x="210" y="42" font-family="'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="600" fill="#2D6B4A" letter-spacing="-0.5">
+    Fungi
+  </text>
+  <!-- Subtle underline accent -->
+  <line x1="82" y1="50" x2="280" y2="50" stroke="url(#accent)" stroke-width="1.5" opacity="0.25"/>
+  <defs>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2D6B4A"/>
+      <stop offset="100%" stop-color="#7B6BAA"/>
+    </linearGradient>
+  </defs>
+</svg>

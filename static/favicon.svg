@@ -1,18 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <defs>
-    <linearGradient id="cap" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#2D6B4A"/>
-      <stop offset="100%" stop-color="#7B6BAA"/>
-    </linearGradient>
-  </defs>
-  <!-- Mushroom cap -->
-  <ellipse cx="32" cy="28" rx="22" ry="16" fill="url(#cap)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Main cap - dome -->
+  <path d="M32 36 C32 14, 4 14, 4 36 Z" fill="#2D6B4A"/>
+  <path d="M32 36 C32 14, 60 14, 60 36 Z" fill="#2D6B4A" opacity="0.82"/>
+  <!-- Gill lines -->
+  <line x1="18" y1="33" x2="18" y2="24" stroke="#FAFAF8" stroke-width="0.8" opacity="0.25"/>
+  <line x1="32" y1="33" x2="32" y2="18" stroke="#FAFAF8" stroke-width="0.8" opacity="0.25"/>
+  <line x1="46" y1="33" x2="46" y2="24" stroke="#FAFAF8" stroke-width="0.8" opacity="0.25"/>
   <!-- Stem -->
-  <rect x="27" y="28" width="10" height="20" rx="5" fill="#3A8A5E" opacity="0.85"/>
-  <!-- Small cap left -->
-  <ellipse cx="16" cy="36" rx="10" ry="7" fill="#7B6BAA" opacity="0.5"/>
-  <rect x="13" y="36" width="6" height="12" rx="3" fill="#7B6BAA" opacity="0.35"/>
-  <!-- Small cap right -->
-  <ellipse cx="48" cy="34" rx="9" ry="6.5" fill="#2D6B4A" opacity="0.45"/>
-  <rect x="45.5" y="34" width="5" height="11" rx="2.5" fill="#2D6B4A" opacity="0.3"/>
+  <rect x="25" y="36" width="14" height="22" rx="5" fill="#2D6B4A" opacity="0.5"/>
+  <!-- Small companion mushroom -->
+  <path d="M54 46 C54 35, 42 35, 42 46 Z" fill="#7B6BAA" opacity="0.55"/>
+  <rect x="45" y="46" width="7" height="13" rx="3" fill="#7B6BAA" opacity="0.3"/>
 </svg>

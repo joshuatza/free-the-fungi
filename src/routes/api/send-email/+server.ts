@@ -72,7 +72,7 @@ ${fn} ${ln}
 ${city}, ${prov}`;
 
 		try {
-			let attachments: { filename: string; content: Buffer }[] | undefined;
+			let attachments: { filename: string; content: Uint8Array }[] | undefined;
 			if (pdfs?.[key]) {
 				// Decode base64 to Buffer for Resend SDK
 				const binaryStr = atob(pdfs[key]);
@@ -82,7 +82,7 @@ ${city}, ${prov}`;
 				}
 				attachments = [{
 					filename: `petition-letter-${fn.toLowerCase()}-${ln.toLowerCase()}.pdf`,
-					content: bytes as unknown as Buffer,
+					content: bytes,
 				}];
 			}
 

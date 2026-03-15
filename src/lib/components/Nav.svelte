@@ -9,6 +9,7 @@
 			<a href="#evidence">The Science</a>
 			<a href="#rights">Our Rights</a>
 			<a href="#timeline">The Case</a>
+			<a href="/community" class="nav-comm">Community</a>
 			<a href="#petition" class="nav-sign">Sign the Petition</a>
 		</div>
 		<button

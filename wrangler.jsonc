@@ -2,5 +2,18 @@
 	"name": "free-the-fungi",
 	"compatibility_date": "2024-12-01",
 	"compatibility_flags": ["nodejs_compat"],
-	"pages_build_output_dir": ".svelte-kit/cloudflare"
+	"pages_build_output_dir": ".svelte-kit/cloudflare",
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "ftf-community",
+			"database_id": "a249f2e1-a733-4171-bbd1-aacdb99897ed"
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "SESSIONS",
+			"id": "83775f64fc364eacabdda3dc2f9c6861"
+		}
+	]
 }

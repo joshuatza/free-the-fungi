@@ -5,7 +5,7 @@
 	let canvas: HTMLCanvasElement;
 	let animId: number;
 
-	onMount(async () => {
+	onMount(() => {(async () => {
 		const RAPIER = await import('@dimforge/rapier3d-compat');
 		await RAPIER.init();
 
@@ -371,7 +371,7 @@
 
 		animate();
 
-		return () => {
+		onDestroy(() => {
 			window.removeEventListener('scroll', handleScroll);
 			window.removeEventListener('mousemove', handleMouseMove);
 			window.removeEventListener('mouseleave', handleMouseLeave);
@@ -379,12 +379,9 @@
 			cancelAnimationFrame(animId);
 			renderer.dispose();
 			world.free();
-		};
-	});
+		});
+	})();});
 
-	onDestroy(() => {
-		if (animId) cancelAnimationFrame(animId);
-	});
 </script>
 
 <canvas bind:this={canvas} class="physics-canvas"></canvas>

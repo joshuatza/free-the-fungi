@@ -19,6 +19,7 @@
 			<a href="/community/threads" class="nav-tab" class:active={pathname.startsWith('/community/threads')}>Threads</a>
 			<a href="/community/ask" class="nav-tab" class:active={pathname.startsWith('/community/ask')}>Ask</a>
 			<a href="/community/submit" class="nav-tab" class:active={pathname === '/community/submit'}>Submit</a>
+			<a href="/articles/" class="nav-tab">Articles</a>
 		</div>
 		<div class="nav-auth">
 			{#if user}

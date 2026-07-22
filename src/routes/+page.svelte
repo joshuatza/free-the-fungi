@@ -4,6 +4,7 @@
 	import SignatureList from '$lib/components/SignatureList.svelte';
 	import PetitionForm from '$lib/components/PetitionForm.svelte';
 	import { count, progress, goal, signatures } from '$lib/stores/signatures';
+	import { ARTICLES } from '$lib/content/articles.js';
 </script>
 
 <svelte:head>
@@ -330,6 +331,24 @@
 </section>
 
 <!-- FOOTER -->
+<!-- LEARN / ARTICLES -->
+<section class="wide-section" id="learn">
+	<div class="wide-inner">
+		<div class="label">Learn</div>
+		<h2>Understand the science, law and history</h2>
+		<p class="lead">Plain-language reference articles on psilocybin — the evidence, the law in South Africa and worldwide, and the reform debate.</p>
+		<div class="learn-list">
+			{#each ARTICLES.slice(0, 5) as a (a.slug)}
+				<a class="learn-item" href="/articles/{a.slug}/">
+					<h3>{a.title}</h3>
+					<p>{a.description}</p>
+				</a>
+			{/each}
+		</div>
+		<a class="btn-s" href="/articles/">Browse all articles →</a>
+	</div>
+</section>
+
 <footer>
 	<div class="footer-inner">
 		<div class="footer-about">
@@ -371,3 +390,39 @@
 		<span>Built by citizens, for citizens.</span>
 	</div>
 </footer>
+
+<style>
+	.learn-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		margin: 2rem 0 1.5rem;
+	}
+	.learn-item {
+		display: block;
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: 8px;
+		padding: 1.1rem 1.4rem;
+		text-decoration: none;
+		transition: all 0.2s;
+	}
+	.learn-item:hover {
+		border-color: var(--accent);
+		transform: translateY(-1px);
+		box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+	}
+	.learn-item h3 {
+		font-family: var(--serif);
+		font-size: 1.02rem;
+		font-weight: 600;
+		color: var(--text);
+		margin-bottom: 0.25rem;
+	}
+	.learn-item p {
+		font-size: 0.85rem;
+		color: var(--dim);
+		line-height: 1.55;
+		margin: 0;
+	}
+</style>

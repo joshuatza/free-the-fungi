@@ -210,5 +210,210 @@ export default [
         "url": "https://www.sahpra.org.za/"
       }
     ]
+  },
+  {
+    "slug": "cannabis-judgment-privacy-rights-south-african-drug-policy",
+    "title": "How the cannabis judgment reshaped South African drug policy",
+    "description": "Exploring the 2018 Constitutional Court cannabis ruling, its privacy reasoning, and why reform advocates see it as a legal template for other controlled substances like psilocybin.",
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-07-23",
+    "tags": [
+      "drug policy",
+      "South African law",
+      "Constitutional Court",
+      "privacy rights",
+      "cannabis precedent"
+    ],
+    "topicId": "sa-cannabis-precedent",
+    "automated": true,
+    "sections": [
+      {
+        "heading": null,
+        "paragraphs": [
+          "South Africa's approach to drug control has historically been characterised by strict prohibition, primarily enforced through the Medicines and Related Substances Act and the Drugs and Drug Trafficking Act. Under this framework, the personal use, possession, and cultivation of almost all psychoactive substances have carried severe criminal penalties. However, the legal landscape shifted significantly in 2018 when the Constitutional Court of South Africa ruled that criminalising the personal use of cannabis by adults was unconstitutional. While this ruling applied specifically to cannabis, it introduced a fundamental rights-based reasoning into South African drug policy. For advocates of other controlled substances, such as psilocybin, the judgment has become a critical reference point and a potential legal template for broader reform."
+        ]
+      },
+      {
+        "heading": "The Constitutional Right to Privacy",
+        "paragraphs": [
+          "The landmark 2018 judgment in *Minister of Justice and Constitutional Development v Prince* centred on Section 14 of the South African Constitution, which protects the right to privacy. Several individuals challenged the laws criminalising cannabis, arguing that the state had no right to police what consenting adults did in the privacy of their own homes, provided it caused no harm to others. The Constitutional Court agreed. The justices found that criminalising the personal possession and consumption of cannabis by adults in private spaces unjustifiably infringed on this right to privacy.",
+          "In reaching this conclusion, the court applied a constitutional proportionality test. While the state argued that criminalisation was necessary to protect public health, the court ruled that prosecuting and imprisoning individuals for private, non-violent conduct was a disproportionate response. Importantly, the ruling decriminalised personal use in private, but it did not legalise the substance entirely; public use, commercial dealing, and use by minors remained strictly prohibited."
+        ]
+      },
+      {
+        "heading": "Parliament's Response and the Limits of Reform",
+        "paragraphs": [
+          "Following the Constitutional Court's ruling, Parliament was given a period of time to amend the relevant legislation to bring it into alignment with the judgment. This legislative process eventually produced the Cannabis for Private Purposes Act, which seeks to regulate the private cultivation, possession, and use of cannabis by adults, while maintaining strict criminal penalties for dealing and public consumption.",
+          "However, the cannabis precedent has distinct legal limits. It did not establish a commercial, regulated market for the substance, nor did it remove cannabis entirely from the regulatory oversight of the South African Health Products Regulatory Authority (SAHPRA) for medical and scientific purposes. The precedent established was therefore narrowly focused on personal autonomy and the right to privacy in one's home, rather than a blanket endorsement of substance use."
+        ]
+      },
+      {
+        "heading": "A Template for Psilocybin Policy?",
+        "paragraphs": [
+          "Because psilocybin is currently classified as a Schedule 7 substance under the Medicines Act—the most restrictive category, generally reserved for substances with a high potential for abuse and no recognised therapeutic use—reform advocates frequently look to the cannabis judgment as a legal template. The core argument is that the constitutional right to privacy should not logically be limited to a single substance. If the state cannot justify criminalising an adult for possessing and using cannabis in their home, advocates argue that the same privacy protections should extend to other substances, including psilocybin.",
+          "Proponents of psilocybin policy reform suggest that the personal, private use of a controlled substance is a matter of individual autonomy, and that the criminal justice system is an inappropriate tool for managing private behaviour. They argue that drug policy should shift from a punitive criminal justice model to a public health and regulatory model, a shift the cannabis ruling partially achieved by prioritising constitutional rights over blanket prohibition."
+        ]
+      },
+      {
+        "heading": "Hurdles to Extending the Precedent",
+        "paragraphs": [
+          "Despite the optimism of reform advocates, extending the cannabis precedent to psilocybin faces significant legal and public health hurdles. The Constitutional Court was careful to base its cannabis ruling on the specific facts and evidence presented in that case, which included extensive testimony about the plant's cultural and historical context in South Africa. Legal scholars often point out that courts may be reluctant to automatically apply the same privacy reasoning to other, less culturally ubiquitous substances.",
+          "Furthermore, regulators like SAHPRA and the Department of Health maintain that different substances carry distinct pharmacological risks. The state may successfully argue that the privacy interest in using a Schedule 7 substance like psilocybin is outweighed by the government's duty to protect public health, particularly given current legal categorisations. Consequently, while the cannabis judgment reshaped the language of South African drug policy by elevating privacy rights, translating that precedent to other controlled substances remains an open and complex legal challenge."
+        ]
+      }
+    ],
+    "references": [
+      {
+        "title": "The Constitution of the Republic of South Africa, 1996 (Chapter 2: Bill of Rights)",
+        "url": "https://www.gov.za/documents/constitution/constitution-republic-south-africa-1996-1"
+      },
+      {
+        "title": "South African Health Products Regulatory Authority (SAHPRA)",
+        "url": "https://www.sahpra.org.za/"
+      },
+      {
+        "title": "Constitutional Court of South Africa",
+        "url": "https://www.concourt.org.za/"
+      }
+    ]
+  },
+  {
+    "slug": "un-1971-convention-psilocybin-international-scheduling",
+    "title": "The UN drug conventions and how psychedelics are scheduled internationally",
+    "description": "An explainer on the 1971 UN Convention on Psychotropic Substances, the international scheduling of psilocybin, and the tension between historical prohibitions and emerging clinical research.",
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-07-23",
+    "tags": [
+      "Drug Policy",
+      "International Law",
+      "United Nations",
+      "Psilocybin",
+      "1971 Convention"
+    ],
+    "topicId": "un-drug-conventions",
+    "automated": true,
+    "sections": [
+      {
+        "heading": null,
+        "paragraphs": [
+          "The global framework for drug control is built on a set of United Nations treaties that dictate how controlled substances are regulated across international borders. While the 1961 Single Convention on Narcotic Drugs was designed to restrict plant-based drugs like opium and cannabis, the emergence of synthetic pharmaceuticals and psychedelic compounds in the mid-20th century prompted the UN to draft a new treaty. The 1971 Convention on Psychotropic Substances expanded the international drug control apparatus to include these new mind-altering substances. This treaty established the scheduling system that still governs psilocybin today, creating a complex landscape where strict historical prohibitions increasingly sit uneasily alongside modern scientific research."
+        ]
+      },
+      {
+        "heading": "The 1971 Convention and its Schedules",
+        "paragraphs": [
+          "The 1971 Convention was created to manage the growing use of synthetic and semi-synthetic substances that affect the central nervous system. To organise these substances, the treaty established a four-tier scheduling system. Schedules II, III, and IV were designed for substances with progressively lower risks and recognised medical applications, allowing them to be prescribed and traded under varying degrees of regulation.",
+          "Schedule I, however, is the most restrictive category. It is reserved for substances that parties deem to have a high potential for abuse and a particularly serious risk to public health, with no or very slight therapeutic value. Substances placed in Schedule I are generally prohibited for medical use, and their production, distribution, and scientific research are subjected to the highest levels of international oversight, strict licensing, and rigid quotas."
+        ]
+      },
+      {
+        "heading": "Psilocybin's International Classification",
+        "paragraphs": [
+          "Under the 1971 Convention, psilocybin is explicitly listed as a Schedule I substance. This classification was largely driven by the socio-political climate of the late 1960s and early 1970s, rather than a robust body of clinical evidence regarding its actual harm profile or lack of medical utility. At the time, psilocybin and other psychedelics were increasingly associated with recreational use and counterculture movements, leading governments to push for strict international controls to curb their spread.",
+          "Consequently, psilocybin was placed in the most restrictive category, legally characterising it as a dangerous drug with no accepted medical use. This international classification heavily influenced domestic drug policies worldwide, prompting nations to enact strict prohibitions on research and clinical use for decades."
+        ]
+      },
+      {
+        "heading": "Tension with Emerging Research",
+        "paragraphs": [
+          "Over the past two decades, a renaissance in psychedelic science has created significant tension with the 1971 Convention's Schedule I classification. Rigorous clinical trials conducted by prominent institutions, such as Johns Hopkins University and Imperial College London, have suggested that psilocybin-assisted therapy may hold significant promise for treatment-resistant depression, end-of-life anxiety, and other mental health conditions. This emerging evidence directly challenges the foundational premise of Schedule I: that the substance has no therapeutic value.",
+          "The World Health Organization (WHO) plays a key role in this landscape. Through its Expert Committee on Drug Dependence, the WHO conducts scientific reviews of substances and makes scheduling recommendations to the UN Commission on Narcotic Drugs. While the treaty allows for rescheduling based on new evidence, the process is inherently political and requires international consensus. As research continues to demonstrate psilocybin's medical potential, the gap between its Schedule I status and contemporary scientific consensus has widened, placing member states in a difficult position when attempting to implement domestic policy reforms without technically violating their international treaty obligations."
+        ]
+      },
+      {
+        "heading": "The South African Context",
+        "paragraphs": [
+          "South Africa, as a signatory to the UN drug conventions, incorporates these international obligations into its domestic legal framework. Under the Medicines and Related Substances Act, psilocybin is classified as a Schedule 7 substance. This is the most restrictive category under South African law, mirroring the UN's Schedule I stance. As a result, psilocybin is illegal to possess, manufacture, or distribute outside of highly specific, SAHPRA-approved clinical research settings.",
+          "As the global scientific community continues to produce evidence contradicting the 1971 Convention's original assumptions, pressure mounts on governments to reform their domestic laws. In South Africa, observers often point to the cannabis precedent as an example of how domestic policy can evolve. While cannabis remains strictly controlled under international conventions, local courts have previously acknowledged shifting scientific attitudes and constitutional privacy rights, prompting changes in how the law treats personal possession. Advocates for evidence-based drug policy suggest that a similar reassessment of psilocybin may be warranted as international research progresses, though any formal rescheduling would require careful navigation of both SAHPRA's medical standards and South Africa's international treaty commitments."
+        ]
+      }
+    ],
+    "references": [
+      {
+        "title": "United Nations Office on Drugs and Crime (UNODC) - The 1971 Convention on Psychotropic Substances",
+        "url": "https://www.unodc.org/unodc/en/treaties/psychotropics.html"
+      },
+      {
+        "title": "World Health Organization (WHO) - Expert Committee on Drug Dependence",
+        "url": "https://www.who.int/health-topics/drugs-psychoactive"
+      },
+      {
+        "title": "South African Health Products Regulatory Authority (SAHPRA)",
+        "url": "https://www.sahpra.org.za/"
+      }
+    ]
+  },
+  {
+    "slug": "decriminalisation-legalisation-medical-access-explained",
+    "title": "Decriminalisation, legalisation, and medical access: what the terms mean",
+    "description": "Plain-language distinctions between the three main drug-policy reform models, with real-world examples, to help readers follow the psilocybin debate accurately.",
+    "datePublished": "2026-07-23",
+    "dateModified": "2026-07-23",
+    "tags": [
+      "drug policy",
+      "decriminalisation",
+      "legalisation",
+      "medical access",
+      "scheduling",
+      "South Africa"
+    ],
+    "topicId": "decrim-vs-legalisation",
+    "automated": true,
+    "sections": [
+      {
+        "heading": null,
+        "paragraphs": [
+          "In public debates about psilocybin and other psychedelics, the words \"decriminalisation\", \"legalisation\", and \"medical access\" are often used as if they meant the same thing. They do not. Each describes a different policy model, answering a different question about what should be permitted, by whom, under what conditions, and how the state should respond to people who use these substances. Getting the vocabulary right matters: it helps people engage with reform proposals on their own terms rather than arguing past one another, and it makes it possible to compare what different countries — and different campaigns — are actually proposing."
+        ]
+      },
+      {
+        "heading": "Why the words matter",
+        "paragraphs": [
+          "Drug policy bundles together several distinct decisions. Is a substance criminal to possess? May it be produced and sold lawfully? Is it approved as a medicine? How is it regulated at each stage, and by which authority? Conflating these questions creates confusion. A campaign to remove criminal penalties for personal possession is not the same as a campaign to permit commercial sales, and neither is identical to a proposal to make a substance available by prescription. Each model carries different legal, public-health, economic, and ethical implications — and different risks. Recognising the distinctions is the first step to evaluating any specific reform on its merits."
+        ]
+      },
+      {
+        "heading": "Decriminalisation",
+        "paragraphs": [
+          "Decriminalisation typically means removing criminal penalties for personal possession of small quantities of a substance, while the substance itself remains legally prohibited. Production, supply, and sale usually remain criminal offences. Portugal's 2001 reform is the most cited example: personal possession of all drugs was reclassified as an administrative rather than a criminal matter, with health-focused referrals rather than prosecution. Decriminalisation does not create a legal market; it changes how the state responds to people who already use drugs.",
+          "Supporters of decriminalisation argue it reduces stigma, incarceration, and barriers to seeking help, and that it redirects resources from criminal justice toward health. A common criticism is that it does not address the harms of an unregulated supply: if possession is no longer criminal but production and sale remain so, the substance continues to reach users through illicit channels with no quality control. Decriminalisation is therefore often described as a harm-reduction measure rather than a full market reform."
+        ]
+      },
+      {
+        "heading": "Legalisation and regulation",
+        "paragraphs": [
+          "Legalisation goes further: it permits the production, sale, and possession of a substance under a regulated framework. Canada's regulated cannabis market and Uruguay's earlier model are frequently cited examples outside psychedelics. Within psychedelics, Oregon's 2020 Measure 109 created a distinct legalised-and-regulated model for supervised psilocybin services, rather than a simple commercial market.",
+          "Legalisation raises questions that decriminalisation does not: who may produce, who may sell, to whom, at what potency, under what labelling, and how revenue is taxed. Supporters argue that regulation improves product safety, shrinks illicit markets, and generates tax revenue for public services. Critics worry about commercialisation, marketing to vulnerable groups, and the normalisation of use. The design of any legalised system — whether it resembles a tightly controlled pharmaceutical model or a more open consumer market — is usually more consequential than the label itself."
+        ]
+      },
+      {
+        "heading": "Medical access and rescheduling",
+        "paragraphs": [
+          "Medical access refers to making a substance available as a prescription medicine, usually following regulatory review of evidence on safety, quality, and efficacy. In scheduling systems — including South Africa's, under the Medicines and Related Substances Act — substances are classified according to perceived risk and therapeutic value, with Schedule 7 reserved for substances considered to have the highest control needs and no accepted medical use. Rescheduling a substance to a lower schedule, or exempting it for specific medical uses, can permit prescription access while the substance remains otherwise prohibited.",
+          "Australia's 2023 decision by the Therapeutic Goods Administration (TGA) to reschedule psilocybin for defined treatment-resistant conditions is a leading example. Medical access is narrower than legalisation: it concerns clinical use under professional oversight, not recreational or general adult use. It also typically depends on a registered product, a prescribing pathway, and trained clinicians — meaning that rescheduling alone does not guarantee that patients can actually obtain the medicine."
+        ]
+      },
+      {
+        "heading": "How the models combine in practice",
+        "paragraphs": [
+          "Real-world reforms often blend these models rather than choosing one in pure form. A jurisdiction might decriminalise personal possession, licence supervised use in dedicated facilities, and authorise prescription access separately — each strand addressing a different concern. South Africa currently sits at a restrictive point: psilocybin is listed under Schedule 7 of the Medicines Act, and possession outside any lawful authorisation can attract criminal penalties. The 2018 Constitutional Court judgment on cannabis privacy suggests, however, that South African courts are willing to interrogate whether criminalising personal use is proportionate — a precedent reformers often discuss, though its application to psilocybin remains untested.",
+          "Understanding the distinctions between these models helps clarify which question any given proposal is actually asking. Decriminalisation asks whether users should be criminals. Legalisation asks whether there should be a regulated market. Medical access asks whether a substance should be a medicine. These questions can be answered independently, and a coherent policy position on psilocybin needs to be clear about which one is being advanced."
+        ]
+      }
+    ],
+    "references": [
+      {
+        "title": "European Monitoring Centre for Drugs and Drug Addiction (EMCDDA) — Drug policy and law",
+        "url": "https://www.emcdda.europa.eu/"
+      },
+      {
+        "title": "South African Health Products Regulatory Authority (SAHPRA)",
+        "url": "https://www.sahpra.org.za/"
+      },
+      {
+        "title": "Therapeutic Goods Administration (TGA), Australia — Medicines and poisons scheduling",
+        "url": "https://www.tga.gov.au/"
+      }
+    ]
   }
 ];
